@@ -1,0 +1,8 @@
+{
+  "appId": "com.davidkasimilu.quicksellpos",
+  "appName": "QuickSell POS",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
