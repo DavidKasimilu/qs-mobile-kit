@@ -34,13 +34,13 @@ jobs:
       - name: Add Android platform
         run: npx cap add android
 
-      - name: Generate launcher icons from assets/icon-512.png
+      - name: Generate launcher icons from logo
         continue-on-error: true
         run: |
           mkdir -p resources-tmp
-          convert assets/icon-512.png -resize 1024x1024 resources-tmp/icon-only.png
+          convert assets/app-logo.png -background none -gravity center -resize 1024x1024 -extent 1024x1024 resources-tmp/icon-only.png
           npx capacitor-assets generate --android --assetPath resources-tmp --iconBackgroundColor '#ffffff'
-
+      
       - name: Sync web assets into Android project
         run: npx cap sync android
 
